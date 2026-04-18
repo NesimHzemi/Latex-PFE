@@ -1,0 +1,214 @@
+\documentclass[12pt,a4paper]{report}
+
+% Encoding and language
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{graphicx}
+
+% Font: Times New Roman
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+
+% Margins: Left 2.5-3 cm, Right 2-2.5 cm, Top/Bottom 2.5 cm
+\usepackage[
+    left=2.75cm,
+    right=2.25cm,
+    top=2.5cm,
+    bottom=2.5cm,
+    headheight=15pt,
+    headsep=10pt,
+    footskip=15pt
+]{geometry}
+
+% Line spacing: 1.5
+\usepackage{setspace}
+\onehalfspacing
+
+% Text alignment: Justified
+\usepackage{ragged2e}
+
+% Paragraph spacing: 6 pt between paragraphs
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+% Optional paragraph indentation: 0.5 cm
+\setlength{\parindent}{0.5cm}
+
+% Customize chapter titles (Grand titre)
+% Size: 16-18 pt, Bold, Uppercase, Centered
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+    {\centering\bfseries}
+    {\Large\chaptertitlename~\thechapter}
+    {0.5em}
+    {\Large\MakeUppercase}
+\titlespacing*{\chapter}{0pt}{-30pt}{20pt}
+
+% Customize section titles (Petit titre 1)
+% Size: 14 pt, Bold, Left aligned
+\titleformat{\section}[hang]
+    {\raggedright\large\bfseries}
+    {\thesection}
+    {0.5em}
+    {}
+\titlespacing*{\section}{0pt}{12pt plus 4pt minus 2pt}{6pt}
+
+% Customize subsection titles (Petit titre 2)
+% Size: 12-13 pt, Bold, Left aligned
+\titleformat{\subsection}[hang]
+    {\raggedright\normalsize\bfseries}
+    {\thesubsection}
+    {0.5em}
+    {}
+\titlespacing*{\subsection}{0pt}{10pt plus 3pt minus 1pt}{6pt}
+
+% Customize list environments
+\usepackage{enumitem}
+\setlist[itemize]{
+    labelsep=0.5em,
+    leftmargin=*,
+    topsep=6pt,
+    itemsep=3pt
+}
+
+\begin{document}
+
+\justifying
+
+\tableofcontents
+\newpage
+
+\chapter{Cadre général du projet}
+
+\section*{Introduction}
+
+Dans le cadre de notre projet de fin d’études, nous avons réalisé un stage au sein de l’entreprise KARRIERY, spécialisé dans les services de ressources humaines. Ce stage a consisté principalement en la conception et le développement d’une application web de type CRM.
+
+Ce chapitre a pour objectif de présenter l’entreprise d’accueil ainsi que le cadre général du projet. Nous allons également analyser les solutions existantes, identifier leurs limites et proposer une solution adaptée. Enfin, nous présenterons la méthodologie adoptée pour la réalisation du projet.
+
+\section{Présentation générale de l’entreprise}
+
+\subsection{Présentation de KARRIERY}
+
+KARRIERY est une plateforme spécialisée dans les services de ressources humaines, fondée en 2022 et basée à Tunis. Elle accompagne les chercheurs d’emploi dans leur parcours professionnel en leur proposant des solutions adaptées pour améliorer leur employabilité.
+
+\subsection{Activités de l’entreprise}
+
+KARRIERY propose plusieurs services destinés aux candidats, notamment :
+
+\begin{itemize}
+\item Révision et amélioration du curriculum vitae
+\item Rédaction de lettres de motivation
+\item Préparation aux entretiens d’embauche
+\item Optimisation des profils LinkedIn
+\item Accompagnement en compétences comportementales (soft skills)
+\end{itemize}
+
+La plateforme met également à disposition des experts dans différents domaines afin d’aider les candidats à mieux se positionner sur le marché du travail.
+
+\subsection{Fiche technique de l’entreprise}
+
+\begin{itemize}
+\item Nom de l’entreprise : KARRIERY
+\item Domaine : Services de ressources humaines
+\item Type : Plateforme de services
+\item Année de création : 2022
+\item Siège social : Tunis, Tunisie
+\item Taille : Entre 11 et 50 employés
+\item Site web : https://karriery.com
+\end{itemize}
+
+\section{Présentation générale du projet}
+
+\subsection{Description du projet}
+
+Le projet consiste à concevoir et développer une plateforme CRM cloud multi-tenant permettant aux entreprises de gérer efficacement leurs relations clients. Cette solution vise à centraliser les données, faciliter le suivi des interactions et améliorer les performances commerciales.
+
+L’application permet notamment la gestion des leads, des comptes, des contacts, des opportunités ainsi que des activités commerciales.
+
+\subsection{Objectifs du projet}
+
+Les principaux objectifs de ce projet sont :
+
+\begin{itemize}
+\item Développer une plateforme CRM moderne et intuitive
+\item Améliorer la gestion des relations clients
+\item Mettre en place une architecture multi-tenant
+\item Assurer la sécurité à travers un système de gestion des rôles (RBAC)
+\item Permettre la personnalisation des entités métier
+\end{itemize}
+
+\section{Étude de l’existant}
+
+\subsection{Description de l’existant}
+
+Actuellement, plusieurs entreprises utilisent des outils traditionnels tels que des fichiers Excel ou des solutions non centralisées pour gérer leurs données clients. Cette approche limite la visibilité globale des informations et complique la gestion des interactions avec les clients.
+
+Par ailleurs, certaines entreprises utilisent des solutions CRM existantes. Toutefois, ces solutions sont souvent complexes, coûteuses et peu adaptées aux besoins spécifiques des petites et moyennes entreprises.
+
+\subsection{Critiques de l’existant}
+
+Les solutions existantes présentent plusieurs inconvénients :
+
+\begin{itemize}
+\item Gestion manuelle des données sujette aux erreurs
+\item Difficulté de centralisation des informations
+\item Manque de flexibilité et de personnalisation
+\item Coût élevé des solutions professionnelles
+\item Absence d’isolation des données entre organisations
+\end{itemize}
+
+\subsection{Solution proposée}
+
+Face à ces limitations, nous proposons une plateforme CRM cloud multi-tenant permettant :
+
+\begin{itemize}
+\item La gestion des leads
+\item La gestion des comptes (Accounts)
+\item La gestion des contacts
+\item La gestion des opportunités
+\item La gestion des activités (appels, tâches, notes)
+\item Un tableau de bord avec indicateurs de performance (KPIs)
+\end{itemize}
+
+Cette solution permet d’améliorer l’organisation des données, d’optimiser les processus commerciaux et d’assurer une meilleure prise de décision.
+
+\section{Choix méthodologique}
+
+\subsection{Méthodologie de travail}
+
+Afin de garantir une bonne organisation du projet et une meilleure gestion des évolutions, nous avons adopté une approche agile.
+
+\subsection{Méthode choisie : Scrum}
+
+Scrum est une méthode agile basée sur des cycles de développement appelés sprints. Elle permet une amélioration continue du produit et une meilleure adaptation aux besoins.
+
+\subsection{L’équipe Scrum}
+
+Dans le cadre de notre projet, l’équipe est composée de deux membres assurant le développement de l’application. Le travail a été réparti entre le développement frontend et backend.
+
+\subsection{Les artefacts Scrum}
+
+\begin{itemize}
+\item Product Backlog
+\item Sprint Backlog
+\item Incrément
+\end{itemize}
+
+\subsection{Les événements Scrum}
+
+\begin{itemize}
+\item Sprint
+\item Daily meeting
+\item Sprint review
+\item Sprint retrospective
+\end{itemize}
+
+\subsection{Langage de modélisation}
+
+Pour la conception du système, nous utilisons UML (Unified Modeling Language), qui permet de représenter les différentes composantes du système à travers des diagrammes.
+
+\section*{Conclusion}
+
+Dans ce chapitre, nous avons présenté le cadre général du projet ainsi que l’entreprise d’accueil. Nous avons également analysé les solutions existantes et proposé une solution adaptée basée sur une architecture moderne. Enfin, nous avons présenté la méthodologie Scrum adoptée pour la réalisation du projet.
+
+\end{document}
