@@ -1,0 +1,25 @@
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.toc
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.pdf
+*.out
+*.dvi
+
+# Temporary files
+*.ps1
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
